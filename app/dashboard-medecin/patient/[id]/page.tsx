@@ -5,6 +5,7 @@ import { createClient } from '../../../utils/supabase/client'
 import { useRouter, useParams } from 'next/navigation'
 import { ArrowLeft, User, Activity, FileText, CheckCircle2, Clock, AlertCircle } from 'lucide-react'
 import Link from 'next/link'
+import toast from 'react-hot-toast'
 
 export default function PatientDossier() {
   const params = useParams()
@@ -71,12 +72,13 @@ export default function PatientDossier() {
         }
       ])
 
-    if (!error) {
-      setNotes('') // On vide le champ texte
-      await fetchPatientData() // On recharge la page pour voir la nouvelle note
+   if (!error) {
+      setNotes('') 
+      toast.success("Consultation enregistrée avec succès !") // <-- LE TOAST SUCCÈS
+      await fetchPatientData() 
     } else {
       console.error("Erreur sauvegarde:", error)
-      alert("Erreur lors de l'enregistrement de la consultation.")
+      toast.error("Impossible d'enregistrer la consultation.") // <-- LE TOAST ERREUR
     }
     setSaving(false)
   }
