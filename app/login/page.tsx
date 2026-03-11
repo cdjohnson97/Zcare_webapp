@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { createClient } from '../utils/supabase/client'
 import { useRouter } from 'next/navigation'
 import { Heart, Mail, Lock } from 'lucide-react'
+import toast from 'react-hot-toast'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -19,14 +20,19 @@ export default function LoginPage() {
     setError(null)
 
     const { data, error } = await supabase.auth.signInWithPassword({
-      email, password,
+      email,
+      password,
     })
 
     if (error) {
-      setError("Email ou mot de passe incorrect.")
+      // ON UTILISE LE TOAST AU LIEU DE setError
+      toast.error("Email ou mot de passe incorrect.") 
       setLoading(false)
       return
     }
+
+    // SI C'EST UN SUCCÈS :
+    toast.success("Connexion réussie !")
 
     const { data: profile } = await supabase
       .from('profiles').select('role').eq('id', data.user.id).single()
