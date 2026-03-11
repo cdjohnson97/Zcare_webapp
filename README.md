@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏥 Zcare - Plateforme de Suivi Médical Étudiant
 
-## Getting Started
+Zcare est une application web moderne conçue pour faciliter le suivi médical des étudiants par les professionnels de santé (médecins universitaires, infirmières, etc.). Elle offre une interface fluide, sécurisée et intuitive pour gérer les dossiers médicaux et les urgences.
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
 
+## ✨ Fonctionnalités (En cours de développement)
+
+- **🔐 Authentification sécurisée :** Connexion avec gestion des rôles (Médecin / Étudiant) via Supabase Auth (SSR).
+- **🩺 Espace Médecin :** - Tableau de bord listant tous les dossiers patients actifs.
+  - Fiche détaillée du patient avec informations clés (groupe sanguin, etc.).
+  - Historique médical complet sous forme de "Timeline" chronologique.
+  - Ajout de nouvelles consultations avec mise à jour automatique du statut de santé du patient (Stable, En observation, Urgence).
+- **🎓 Espace Étudiant :** *(Bientôt disponible)* Accès personnel à son propre historique et dossier médical.
+- **🎨 Design & UI/UX :** Interface premium aux couleurs bordeaux, animations fluides (électrocardiogramme animé au login, fade-in up, composants sticky) et responsive design.
+
+## 🛠️ Stack Technique
+
+- **Framework :** [Next.js](https://nextjs.org/) (App Router)
+- **Langage :** TypeScript / React
+- **Styling :** [Tailwind CSS](https://tailwindcss.com/) (v3)
+- **Base de données & Auth :** [Supabase](https://supabase.com/) (PostgreSQL)
+- **Icônes :** [Lucide React](https://lucide.dev/)
+
+## 🚀 Installation et Lancement local
+
+### Prérequis
+- Node.js installé sur votre machine.
+- Un compte Supabase avec un projet initialisé.
+
+### 1. Cloner le dépôt
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git clone [https://github.com/votre-nom/zcare.git](https://github.com/votre-nom/zcare.git)
+cd zcare
